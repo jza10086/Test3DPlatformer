@@ -4,7 +4,7 @@
 
 [node name="MapSelect" type="Node3D"]
 script = ExtResource("1")
-maps = {"缤纷闯关": "res://games/minigame/GP_test_3d_platformer/maps/carnival_rush.tscn", "发条工厂": "res://games/minigame/GP_test_3d_platformer/maps/clockwork_ascent.tscn", "冰川漂移": "res://games/minigame/GP_test_3d_platformer/maps/glacier_drift.tscn", "丛林双径": "res://games/minigame/GP_test_3d_platformer/maps/jungle_fork.tscn", "灯塔环廊": "res://games/minigame/GP_test_3d_platformer/maps/lighthouse_loop.tscn", "霓虹天路": "res://games/minigame/GP_test_3d_platformer/maps/neon_skyline.tscn", "屋顶接力": "res://games/minigame/GP_test_3d_platformer/maps/rooftop_relay.tscn", "鱿鱼游戏": "res://games/minigame/GP_test_3d_platformer/maps/squid_game.tscn", "积木节拍": "res://games/minigame/GP_test_3d_platformer/maps/toy_tempo.tscn", "俯视陷阱房": "res://games/minigame/GP_test_3d_platformer/top_down/trap_room.tscn"}
+maps = {"缤纷闯关": "res://games/minigame/GP_test_3d_platformer/maps/carnival_rush.tscn", "发条工厂": "res://games/minigame/GP_test_3d_platformer/maps/clockwork_ascent.tscn", "冰川漂移": "res://games/minigame/GP_test_3d_platformer/maps/glacier_drift.tscn", "丛林双径": "res://games/minigame/GP_test_3d_platformer/maps/jungle_fork.tscn", "灯塔环廊": "res://games/minigame/GP_test_3d_platformer/maps/lighthouse_loop.tscn", "霓虹天路": "res://games/minigame/GP_test_3d_platformer/maps/neon_skyline.tscn", "屋顶接力": "res://games/minigame/GP_test_3d_platformer/maps/rooftop_relay.tscn", "积木节拍": "res://games/minigame/GP_test_3d_platformer/maps/toy_tempo.tscn", "俯视陷阱房": "res://games/minigame/GP_test_3d_platformer/top_down/trap_room.tscn"}
 
 [node name="Menu" type="CenterContainer" parent="."]
 anchors_preset = 15
