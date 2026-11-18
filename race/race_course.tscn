@@ -1,0 +1,20 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://games/minigame/GP_test_3d_platformer/race/race_course.gd" id="script"]
+[ext_resource type="PackedScene" path="res://games/assets/GP_platformer_3d_components/race/start_grid.tscn" id="start"]
+[ext_resource type="PackedScene" path="res://games/assets/GP_platformer_3d_components/race/finish_gate.tscn" id="finish"]
+[ext_resource type="PackedScene" path="res://games/minigame/GP_test_3d_platformer/race/race_hud.tscn" id="hud"]
+
+[node name="Course" type="Node3D"]
+script = ExtResource("script")
+
+[node name="StartGrid" parent="." instance=ExtResource("start")]
+
+
+[node name="Checkpoints" type="Node3D" parent="."]
+
+
+[node name="FinishGate" parent="." instance=ExtResource("finish")]
+position = Vector3(0, 0, -12)
+
+
+[node name="HUD" parent="." instance=ExtResource("hud")]

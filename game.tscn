@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="ui/round_pages.tscn" id="protocol_pages"]
+
+[ext_resource type="Script" path="res://games/protocols/GP_default_protocol/solo_round.gd" id="1"]
+[ext_resource type="PackedScene" path="map_select.tscn" id="2"]
+
+[node name="SoloRound" type="Control" node_paths=PackedStringArray("briefing", "settlement")]
+briefing = NodePath("ProtocolPages/Briefing")
+settlement = NodePath("ProtocolPages/Settlement")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+gameplay = ExtResource("2")
+columns = Array[Dictionary]([{"key": "time", "title": "本局用时", "format": "time"}])
+
+[node name="ProtocolPages" parent="." instance=ExtResource("protocol_pages")]
+unique_name_in_owner = true

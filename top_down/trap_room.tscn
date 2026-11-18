@@ -1,0 +1,490 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://games/minigame/GP_test_3d_platformer/top_down/trap_room.gd" id="room"]
+[ext_resource type="PackedScene" path="res://games/assets/GP_platformer_3d_components/obstacles/static_platform.tscn" id="solid"]
+[ext_resource type="PackedScene" path="res://games/assets/GP_platformer_3d_components/top_down/laser_trap.tscn" id="laser"]
+[ext_resource type="PackedScene" path="res://games/assets/GP_platformer_3d_components/top_down/trap_emitter.tscn" id="emitter"]
+[ext_resource type="PackedScene" path="res://games/assets/GP_platformer_3d_components/top_down/weak_missile.tscn" id="missile"]
+[sub_resource type="Environment" id="Env"]
+background_mode = 1
+background_color = Color(0.018,0.03,0.055,1)
+ambient_light_source = 3
+ambient_light_color = Color(0.53,0.67,0.8,1)
+ambient_light_energy = 0.7
+tonemap_mode = 2
+[sub_resource type="SystemFont" id="Font"]
+font_names = PackedStringArray("Microsoft YaHei","Noto Sans CJK SC","Segoe UI")
+[sub_resource type="Theme" id="Theme"]
+default_font = SubResource("Font")
+default_font_size = 20
+[sub_resource type="StyleBoxFlat" id="Panel"]
+bg_color = Color(0.025,0.045,0.075,0.94)
+content_margin_left = 18.0
+content_margin_right = 18.0
+content_margin_top = 14.0
+content_margin_bottom = 14.0
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_left = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StandardMaterial3D" id="Floor"]
+albedo_color = Color(0.095,0.15,0.21,1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Wall"]
+albedo_color = Color(0.15,0.23,0.3,1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Grid"]
+albedo_color = Color(0.2,0.32,0.38,1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Cyan"]
+albedo_color = Color(0.12,0.8,0.8,1)
+roughness = 0.8
+emission_enabled = true
+emission = Color(0.12,0.8,0.8,1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="StandardMaterial3D" id="Purple"]
+albedo_color = Color(0.7,0.14,0.65,1)
+roughness = 0.8
+emission_enabled = true
+emission = Color(0.7,0.14,0.65,1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="StandardMaterial3D" id="Orange"]
+albedo_color = Color(1,0.4,0.1,1)
+roughness = 0.8
+emission_enabled = true
+emission = Color(1,0.4,0.1,1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="BoxMesh" id="FloorMesh"]
+size = Vector3(26,0.6,20)
+material = SubResource("Floor")
+
+[sub_resource type="BoxShape3D" id="FloorShape"]
+size = Vector3(26,0.6,20)
+
+[sub_resource type="BoxMesh" id="NorthMesh"]
+size = Vector3(25.5,1.3,0.5)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="NorthShape"]
+size = Vector3(25.5,1.3,0.5)
+
+[sub_resource type="BoxMesh" id="SouthMesh"]
+size = Vector3(25.5,1.3,0.5)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="SouthShape"]
+size = Vector3(25.5,1.3,0.5)
+
+[sub_resource type="BoxMesh" id="WestMesh"]
+size = Vector3(0.5,1.3,19.5)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="WestShape"]
+size = Vector3(0.5,1.3,19.5)
+
+[sub_resource type="BoxMesh" id="EastMesh"]
+size = Vector3(0.5,1.3,19.5)
+material = SubResource("Wall")
+
+[sub_resource type="BoxShape3D" id="EastShape"]
+size = Vector3(0.5,1.3,19.5)
+
+[sub_resource type="BoxMesh" id="GridX0Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX2Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX4Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX6Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX8Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX10Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX12Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX14Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX16Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX18Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX20Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX22Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridX24Mesh"]
+size = Vector3(0.025,0.01,18.5)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ0Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ2Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ4Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ6Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ8Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ10Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ12Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ14Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="GridZ16Mesh"]
+size = Vector3(24.5,0.01,0.025)
+material = SubResource("Grid")
+
+[sub_resource type="BoxMesh" id="Beacon00Mesh"]
+size = Vector3(0.5,2,0.5)
+material = SubResource("Cyan")
+
+[sub_resource type="BoxMesh" id="Beacon019Mesh"]
+size = Vector3(0.5,2,0.5)
+material = SubResource("Cyan")
+
+[sub_resource type="BoxMesh" id="Beacon250Mesh"]
+size = Vector3(0.5,2,0.5)
+material = SubResource("Cyan")
+
+[sub_resource type="BoxMesh" id="Beacon2519Mesh"]
+size = Vector3(0.5,2,0.5)
+material = SubResource("Cyan")
+
+[sub_resource type="BoxMesh" id="EmitterPad0Mesh"]
+size = Vector3(1.2,0.06,1.2)
+material = SubResource("Orange")
+
+[sub_resource type="BoxMesh" id="EmitterPad1Mesh"]
+size = Vector3(1.2,0.06,1.2)
+material = SubResource("Orange")
+
+[sub_resource type="BoxMesh" id="EmitterPad2Mesh"]
+size = Vector3(1.2,0.06,1.2)
+material = SubResource("Orange")
+
+[sub_resource type="BoxMesh" id="EmitterPad3Mesh"]
+size = Vector3(1.2,0.06,1.2)
+material = SubResource("Orange")
+
+[sub_resource type="BoxMesh" id="EmitterPad4Mesh"]
+size = Vector3(1.2,0.06,1.2)
+material = SubResource("Purple")
+
+[sub_resource type="BoxMesh" id="EmitterPad5Mesh"]
+size = Vector3(1.2,0.06,1.2)
+material = SubResource("Purple")
+
+[node name="TrapRoom" type="Node3D"]
+script = ExtResource("room")
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-65,-30,0)
+light_energy = 1.4
+shadow_enabled = true
+[node name="Geometry" type="Node3D" parent="."]
+[node name="Decor" type="Node3D" parent="."]
+[node name="StartGrid" type="Node3D" parent="."]
+[node name="P1" type="Marker3D" parent="StartGrid"]
+position = Vector3(-1.5,0.03,3)
+[node name="P2" type="Marker3D" parent="StartGrid"]
+position = Vector3(1.5,0.03,3)
+[node name="P3" type="Marker3D" parent="StartGrid"]
+position = Vector3(-1.5,0.03,5)
+[node name="P4" type="Marker3D" parent="StartGrid"]
+position = Vector3(1.5,0.03,5)
+[node name="Players" type="Node3D" parent="."]
+[node name="Attacks" type="Node3D" parent="."]
+[node name="Emitters" type="Node3D" parent="."]
+
+[node name="Floor" parent="Geometry" instance=ExtResource("solid")]
+position = Vector3(0,-0.3,0)
+[node name="Collision" parent="Geometry/Floor"]
+shape = SubResource("FloorShape")
+[node name="Visual" parent="Geometry/Floor"]
+mesh = SubResource("FloorMesh")
+
+[node name="North" parent="Geometry" instance=ExtResource("solid")]
+position = Vector3(0,0.65,-9.5)
+[node name="Collision" parent="Geometry/North"]
+shape = SubResource("NorthShape")
+[node name="Visual" parent="Geometry/North"]
+mesh = SubResource("NorthMesh")
+
+[node name="South" parent="Geometry" instance=ExtResource("solid")]
+position = Vector3(0,0.65,9.5)
+[node name="Collision" parent="Geometry/South"]
+shape = SubResource("SouthShape")
+[node name="Visual" parent="Geometry/South"]
+mesh = SubResource("SouthMesh")
+
+[node name="West" parent="Geometry" instance=ExtResource("solid")]
+position = Vector3(-12.5,0.65,0)
+[node name="Collision" parent="Geometry/West"]
+shape = SubResource("WestShape")
+[node name="Visual" parent="Geometry/West"]
+mesh = SubResource("WestMesh")
+
+[node name="East" parent="Geometry" instance=ExtResource("solid")]
+position = Vector3(12.5,0.65,0)
+[node name="Collision" parent="Geometry/East"]
+shape = SubResource("EastShape")
+[node name="Visual" parent="Geometry/East"]
+mesh = SubResource("EastMesh")
+
+[node name="GridX0" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-12,0.008,0)
+mesh = SubResource("GridX0Mesh")
+
+[node name="GridX2" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-10,0.008,0)
+mesh = SubResource("GridX2Mesh")
+
+[node name="GridX4" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-8,0.008,0)
+mesh = SubResource("GridX4Mesh")
+
+[node name="GridX6" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-6,0.008,0)
+mesh = SubResource("GridX6Mesh")
+
+[node name="GridX8" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-4,0.008,0)
+mesh = SubResource("GridX8Mesh")
+
+[node name="GridX10" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-2,0.008,0)
+mesh = SubResource("GridX10Mesh")
+
+[node name="GridX12" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,0)
+mesh = SubResource("GridX12Mesh")
+
+[node name="GridX14" type="MeshInstance3D" parent="Decor"]
+position = Vector3(2,0.008,0)
+mesh = SubResource("GridX14Mesh")
+
+[node name="GridX16" type="MeshInstance3D" parent="Decor"]
+position = Vector3(4,0.008,0)
+mesh = SubResource("GridX16Mesh")
+
+[node name="GridX18" type="MeshInstance3D" parent="Decor"]
+position = Vector3(6,0.008,0)
+mesh = SubResource("GridX18Mesh")
+
+[node name="GridX20" type="MeshInstance3D" parent="Decor"]
+position = Vector3(8,0.008,0)
+mesh = SubResource("GridX20Mesh")
+
+[node name="GridX22" type="MeshInstance3D" parent="Decor"]
+position = Vector3(10,0.008,0)
+mesh = SubResource("GridX22Mesh")
+
+[node name="GridX24" type="MeshInstance3D" parent="Decor"]
+position = Vector3(12,0.008,0)
+mesh = SubResource("GridX24Mesh")
+
+[node name="GridZ0" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,-8)
+mesh = SubResource("GridZ0Mesh")
+
+[node name="GridZ2" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,-6)
+mesh = SubResource("GridZ2Mesh")
+
+[node name="GridZ4" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,-4)
+mesh = SubResource("GridZ4Mesh")
+
+[node name="GridZ6" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,-2)
+mesh = SubResource("GridZ6Mesh")
+
+[node name="GridZ8" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,0)
+mesh = SubResource("GridZ8Mesh")
+
+[node name="GridZ10" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,2)
+mesh = SubResource("GridZ10Mesh")
+
+[node name="GridZ12" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,4)
+mesh = SubResource("GridZ12Mesh")
+
+[node name="GridZ14" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,6)
+mesh = SubResource("GridZ14Mesh")
+
+[node name="GridZ16" type="MeshInstance3D" parent="Decor"]
+position = Vector3(0,0.008,8)
+mesh = SubResource("GridZ16Mesh")
+
+[node name="Beacon00" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-12.5,1.0,-9.5)
+mesh = SubResource("Beacon00Mesh")
+
+[node name="Beacon019" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-12.5,1.0,9.5)
+mesh = SubResource("Beacon019Mesh")
+
+[node name="Beacon250" type="MeshInstance3D" parent="Decor"]
+position = Vector3(12.5,1.0,-9.5)
+mesh = SubResource("Beacon250Mesh")
+
+[node name="Beacon2519" type="MeshInstance3D" parent="Decor"]
+position = Vector3(12.5,1.0,9.5)
+mesh = SubResource("Beacon2519Mesh")
+
+[node name="Emitter1" parent="Emitters" instance=ExtResource("emitter")]
+position = Vector3(-11.8,0.9,-6)
+rotation_degrees = Vector3(0,-90,0)
+
+[node name="EmitterPad0" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-11.8,0.03,-6)
+mesh = SubResource("EmitterPad0Mesh")
+
+[node name="Emitter2" parent="Emitters" instance=ExtResource("emitter")]
+position = Vector3(11.8,0.9,6)
+rotation_degrees = Vector3(0,90,0)
+
+[node name="EmitterPad1" type="MeshInstance3D" parent="Decor"]
+position = Vector3(11.8,0.03,6)
+mesh = SubResource("EmitterPad1Mesh")
+
+[node name="Emitter3" parent="Emitters" instance=ExtResource("emitter")]
+position = Vector3(-8,0.9,-8.8)
+rotation_degrees = Vector3(0,180,0)
+
+[node name="EmitterPad2" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-8,0.03,-8.8)
+mesh = SubResource("EmitterPad2Mesh")
+
+[node name="Emitter4" parent="Emitters" instance=ExtResource("emitter")]
+position = Vector3(8,0.9,8.8)
+rotation_degrees = Vector3(0,0,0)
+
+[node name="EmitterPad3" type="MeshInstance3D" parent="Decor"]
+position = Vector3(8,0.03,8.8)
+mesh = SubResource("EmitterPad3Mesh")
+
+[node name="Emitter5" parent="Emitters" instance=ExtResource("emitter")]
+position = Vector3(-11.8,0.9,6)
+rotation_degrees = Vector3(0,-90,0)
+guided = true
+projectile = ExtResource("missile")
+speed = 5.2
+warning_seconds = 1.1
+projectile_lifetime = 6.0
+
+[node name="EmitterPad4" type="MeshInstance3D" parent="Decor"]
+position = Vector3(-11.8,0.03,6)
+mesh = SubResource("EmitterPad4Mesh")
+
+[node name="Emitter6" parent="Emitters" instance=ExtResource("emitter")]
+position = Vector3(11.8,0.9,-6)
+rotation_degrees = Vector3(0,90,0)
+guided = true
+projectile = ExtResource("missile")
+speed = 5.2
+warning_seconds = 1.1
+projectile_lifetime = 6.0
+
+[node name="EmitterPad5" type="MeshInstance3D" parent="Decor"]
+position = Vector3(11.8,0.03,-6)
+mesh = SubResource("EmitterPad5Mesh")
+
+[node name="Lasers" type="Node3D" parent="."]
+
+[node name="Laser1" parent="Lasers" instance=ExtResource("laser")]
+position = Vector3(-6,0.9,0)
+rotation_degrees = Vector3(0,0,0)
+beam_length = 18.0
+initial_delay = 2
+
+[node name="Laser2" parent="Lasers" instance=ExtResource("laser")]
+position = Vector3(0,0.9,-3)
+rotation_degrees = Vector3(0,90,0)
+beam_length = 24.0
+initial_delay = 4.5
+
+[node name="Laser3" parent="Lasers" instance=ExtResource("laser")]
+position = Vector3(6,0.9,0)
+rotation_degrees = Vector3(0,0,0)
+beam_length = 18.0
+initial_delay = 7
+
+[node name="HUD" type="CanvasLayer" parent="."]
+[node name="Panel" type="PanelContainer" parent="HUD"]
+offset_left = 20.0
+offset_top = 20.0
+theme = SubResource("Theme")
+theme_override_styles/panel = SubResource("Panel")
+mouse_filter = 2
+[node name="Rows" type="VBoxContainer" parent="HUD/Panel"]
+theme_override_constants/separation = 10
+mouse_filter = 2
+[node name="Status" type="Label" parent="HUD/Panel/Rows"]
+text = "陷阱房 · 俯视生存"
+theme_override_font_sizes/font_size = 24
+[node name="Players" type="Label" parent="HUD/Panel/Rows"]
+text = "P1"
+[node name="Controls" type="Label" parent="HUD/Panel/Rows"]
+text = "WASD 跑动
+留意黄色预警，提前避开"
+theme_override_colors/font_color = Color(0.35,0.95,0.85,1)
+[node name="Legend" type="Label" parent="HUD/Panel/Rows"]
+text = "红：激光    橙：炮弹
+紫：弱制导导弹
+圆形准星：锯盘落点"
+theme_override_font_sizes/font_size = 17
+theme_override_colors/font_color = Color(0.75,0.81,0.9,1)
