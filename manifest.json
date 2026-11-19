@@ -1,8 +1,8 @@
 {
   "id": "GP_test_3d_platformer",
   "kind": "minigame",
-  "package_version": "0.1.2",
-  "framework_version": "0.3.0",
+  "package_version": "0.1.3",
+  "framework_version": "0.4.0",
   "remark": "八条竞速赛道与一间俯视陷阱房。",
   "supported_languages": [
     "zh-CN"
