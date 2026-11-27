@@ -4,7 +4,7 @@
 
 [node name="Briefing" instance=ExtResource("1")]
 
-[node name="Title" parent="View/Layout/Center/Content" index="0"]
+[node name="Title" parent="View/Layout/Columns/LeftColumn/PreviewPanel/TitleInset" index="0"]
 text = "测试3d平台跳跃"
 
 [editable path="View"]
